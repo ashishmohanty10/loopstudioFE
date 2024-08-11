@@ -15,37 +15,43 @@ export default function Navbar() {
     setIsNavOpen(!isNavOpen);
   };
   return (
-    <nav className="h-[10vh] flex items-center justify-between px-10">
-      <Link href={"/"} className="z-10">
+    <nav className="h-[12vh] flex items-center justify-between px-10 xl:px-32">
+      <Link href={"/"} className="z-50">
         <Image src={Logo} alt="Logo" />
       </Link>
 
-      <div className="space-x-5 hidden md:block">
+      <div className="items-center space-x-5 hidden md:flex">
         {navLink.map((data, idx) => (
-          <Link href={data.url} key={idx}>
+          <Link
+            href={data.url}
+            key={idx}
+            className="text-white group h-4 transition-all"
+          >
             {data.name}
+
+            <div className="group-hover:block hidden w-1/2 h-0.5 mx-auto  bg-slate-300"></div>
           </Link>
         ))}
       </div>
 
       {/* Mobile Navbar */}
-      <div className="md:hidden  transition-all " onClick={handleNavbar}>
-        <div className="z-10">
+      <div className="md:hidden transition-all" onClick={handleNavbar}>
+        <div className="z-50">
           {isNavOpen ? (
-            <Image src={HamburgerClose} alt="Hamburger Open" />
+            <Image src={HamburgerClose} alt="Hamburger Open" className="z-50" />
           ) : (
-            <Image src={HamburgerOpen} alt="Hamburder close" />
+            <Image src={HamburgerOpen} alt="Hamburder close" className="z-50" />
           )}
         </div>
 
-        <div className="absolute w-full top-0 left-0">
+        <div className="absolute w-full top-0 left-0 -z-0">
           {isNavOpen && (
-            <div className="flex flex-col items-start justify-center gap-4 bg-black  min-h-screen">
+            <div className="flex flex-col items-start justify-center gap-4 bg-black min-h-screen space-y-10">
               {navLink.map((data, idx) => (
                 <Link
                   href={data.url}
                   key={idx}
-                  className="text-white text-2xl pl-10"
+                  className="text-white text-2xl pl-10   group h-4 transition-all"
                 >
                   {data.name}
                 </Link>
