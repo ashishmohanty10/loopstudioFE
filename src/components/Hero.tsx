@@ -25,11 +25,11 @@ export default function HeroImage() {
 export function HeroTxt() {
   return (
     <>
-      <div className="h-[88vh] flex items-center -z-40">
-        <p className="border-2 border-slate-200 w-full xl:w-2/3 p-12 md:text-6xl z-50 text-white font-light text-3xl">
-          IMMERSIVE <br />
-          EXPERIANCE <br />
-          THAT DELIVER
+      <div className="h-[88vh] flex items-center -z-40 leading-6">
+        <p className="border-2 border-slate-200 w-full xl:w-2/3 p-12 md:text-6xl z-50 text-white font-light text-4xl leading-relaxed">
+          <span>IMMERSIVE </span> <br />
+          <span>EXPERIANCE</span> <br />
+          <span>THAT DELIVER</span>
         </p>
       </div>
     </>
