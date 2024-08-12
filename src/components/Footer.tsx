@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="flex items-center xl:justify-between justify-center">
         <Image src={Logo} alt="Footer Logo" />
 
-        <div className="hidden xl:flex items-center space-x-4">
+        <div className="hidden xl:flex items-center space-x-4 cursor-pointer">
           {socials.map((data, idx) => (
             <Image src={data.image} alt="Social IDs" key={idx} />
           ))}
@@ -38,7 +38,8 @@ export default function Footer() {
         </p>
       </div>
 
-      <div className="space-y-10">
+      {/* mobile footer */}
+      <div className="block xl:hidden space-y-8">
         <div className="flex justify-center items-center flex-col space-y-5">
           {navLink.map((data, idx) => (
             <Link
@@ -53,9 +54,9 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="flex items-center justify-center gap-5">
+        <div className="flex items-center justify-center gap-5 cursor-pointer">
           {socials.map((data, idx) => (
-            <Image src={data.image} alt="Social IDs" key={idx} />
+            <Image src={data.image} alt="Social Id's" key={idx} />
           ))}
         </div>
 

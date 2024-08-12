@@ -16,7 +16,7 @@ export default function OurCreations() {
       </div>
 
       <div className="hidden xl:block">
-        <div className="xl:grid grid-cols-4 gap-6 ">
+        <div className="xl:grid grid-cols-4 gap-6 cursor-pointer">
           {ourCreationDesktop.map((data, idx) => (
             <div
               className="flex items-center justify-center relative"
@@ -24,21 +24,31 @@ export default function OurCreations() {
             >
               <Image src={data.img} alt="our creation img" className="w-full" />
 
-              <p className="absolute bottom-8 left-2 text-white font-light text-4xl"></p>
+              <p className="absolute bottom-10 left-10 text-white font-light text-3xl w-[170px]  tracking-wide ">
+                {data.name}
+              </p>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="block xl:hidden">
+      <div className="block xl:hidden space-y-10">
         <div className="space-y-5">
           {ourCreationMobile.map((data, idx) => (
-            <div className="relative" key={idx}>
+            <div className="relative " key={idx}>
               <Image src={data.img} alt="our creation img" className="w-full" />
 
-              <p className="absolute px-2 top-8 text-white font-light text-3xl"></p>
+              <p className="absolute left-10 top-16 text-white font-light text-3xl w-[150px] tracking-tight">
+                {data.name}
+              </p>
             </div>
           ))}
+        </div>
+
+        <div className="flex space-y-5 items-center justify-center">
+          <button className="block border xl:hidden border-slate-900 px-6 py-2 tracking-widest hover:bg-black hover:text-white transition-all text-center">
+            SEE ALL
+          </button>
         </div>
       </div>
     </section>

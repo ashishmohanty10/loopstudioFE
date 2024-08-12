@@ -35,16 +35,24 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Navbar */}
-      <div className="md:hidden transition-all" onClick={handleNavbar}>
-        <div className="z-50">
+      <div className="md:hidden transition-all z-999" onClick={handleNavbar}>
+        <div className="">
           {isNavOpen ? (
-            <Image src={HamburgerClose} alt="Hamburger Open" className="z-50" />
+            <Image
+              src={HamburgerClose}
+              alt="Hamburger Open"
+              className="z-999"
+            />
           ) : (
-            <Image src={HamburgerOpen} alt="Hamburder close" className="z-50" />
+            <Image
+              src={HamburgerOpen}
+              alt="Hamburder close"
+              className="z-999"
+            />
           )}
         </div>
 
-        <div className="absolute w-full top-0 left-0 -z-0">
+        <div className="absolute w-full top-0 left-0 -z-10">
           {isNavOpen && (
             <div className="flex flex-col items-start justify-center gap-4 bg-black min-h-screen space-y-10">
               {navLink.map((data, idx) => (
