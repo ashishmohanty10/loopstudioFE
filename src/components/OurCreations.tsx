@@ -1,6 +1,7 @@
 import { ourCreationDesktop, ourCreationMobile } from "@/constants/constants";
 import Image from "next/image";
 import React from "react";
+import * as motion from "framer-motion/client";
 
 export default function OurCreations() {
   return (
@@ -18,7 +19,11 @@ export default function OurCreations() {
       <div className="hidden xl:block">
         <div className="xl:grid grid-cols-4 gap-6 cursor-pointer">
           {ourCreationDesktop.map((data, idx) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ ease: "easeIn", duration: 0.5 }}
               className="flex items-center justify-center relative"
               key={idx}
             >
@@ -27,7 +32,7 @@ export default function OurCreations() {
               <p className="absolute bottom-10 left-10 text-white font-light text-3xl w-[170px]  tracking-wide ">
                 {data.name}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

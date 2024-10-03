@@ -2,10 +2,16 @@ import Image from "next/image";
 import React from "react";
 import DesktopHeroImage from "/public/desktop/image-hero.jpg";
 import MobileHeroImage from "/public/mobile/image-hero.jpg";
+import * as motion from "framer-motion/client";
 
 export default function HeroImage() {
   return (
-    <section className="absolute top-0  w-full -z-50">
+    <motion.section
+      initial={{ scale: 0.9, opacity: 0, filter: "blur(10px)" }}
+      animate={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
+      transition={{ duration: 0.35 }}
+      className="absolute top-0  w-full -z-50"
+    >
       <div className="">
         <Image
           src={DesktopHeroImage}
@@ -18,7 +24,7 @@ export default function HeroImage() {
           className="block xl:hidden h-screen w-full object-cover"
         />
       </div>
-    </section>
+    </motion.section>
   );
 }
 

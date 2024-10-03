@@ -7,6 +7,7 @@ import HamburgerClose from "/public/icon-close.svg";
 import Image from "next/image";
 import { navLink } from "@/constants/constants";
 import Link from "next/link";
+import * as motion from "framer-motion/client";
 
 export default function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
@@ -15,7 +16,7 @@ export default function Navbar() {
     setIsNavOpen(!isNavOpen);
   };
   return (
-    <nav className="h-[12vh] flex items-center justify-between px-10 xl:px-32">
+    <nav className="h-[12vh] flex items-center justify-between px-10 xl:px-32 backdrop-blur-md">
       <Link href={"/"} className="z-50">
         <Image src={Logo} alt="Logo" />
       </Link>

@@ -3,10 +3,17 @@ import React from "react";
 import Logo from "/public/logo.svg";
 import { navLink, socials } from "@/constants/constants";
 import Link from "next/link";
+import * as motion from "framer-motion/client";
 
 export default function Footer() {
   return (
-    <div className="w-full bg-black py-8 xl:px-32 space-y-4">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ ease: "easeIn", duration: 0.5 }}
+      className="w-full bg-black py-8 xl:px-32 space-y-4"
+    >
       <div className="flex items-center xl:justify-between justify-center">
         <Image src={Logo} alt="Footer Logo" />
 
@@ -65,6 +72,6 @@ export default function Footer() {
           <span>2025. All rights reserved.</span>
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 }
