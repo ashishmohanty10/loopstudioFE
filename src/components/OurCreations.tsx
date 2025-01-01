@@ -24,7 +24,7 @@ export default function OurCreations() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ ease: "easeIn", duration: 0.5 }}
-              className="flex items-center justify-center relative"
+              className="flex items-center justify-center relative w-full"
               key={idx}
             >
               <Image src={data.img} alt="our creation img" className="w-full" />

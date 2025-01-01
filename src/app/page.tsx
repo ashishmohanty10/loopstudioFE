@@ -6,10 +6,10 @@ import React from "react";
 
 function page() {
   return (
-    <div className="">
+    <div>
       <HeroImage />
 
-      <section className="flex flex-col space-y-5 px-10 xl:px-32 -z-50">
+      <section className="flex flex-col space-y-5 -z-50 justify-center max-w-[80rem] mx-auto">
         <HeroTxt />
         <Leader />
         <OurCreations />

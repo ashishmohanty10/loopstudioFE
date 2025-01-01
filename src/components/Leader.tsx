@@ -13,7 +13,11 @@ export default function Leader() {
       className="xl:grid grid-cols-2 items-end py-10 space-y-6 xl:space-y-0"
     >
       <div className="col-span-1">
-        <Image src={DesktopInterative} alt="Desktop Interactive image" />
+        <Image
+          src={DesktopInterative}
+          alt="Desktop Interactive image"
+          className="w-full"
+        />
       </div>
 
       <div className="col-span-1 space-y-4 xl:p-10 bg-white xl:-translate-x-36">
